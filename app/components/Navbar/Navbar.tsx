@@ -4,7 +4,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-6">
 
         <h1 className="text-2xl font-bold text-white">
-          DELTA
+          DELTA9
         </h1>
 
         <nav>
