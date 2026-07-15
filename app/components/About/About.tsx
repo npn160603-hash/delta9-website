@@ -9,23 +9,23 @@ export default function About() {
   const services = [
     {
       icon: Briefcase,
-      title: "Kinh doanh quốc tế",
-      desc: "Gia nhập thị trường, hợp tác chiến lược và mở rộng kinh doanh."
+      title: "Phát triển Kinh doanh",
+      desc: "Gia nhập thị trường, hợp tác chiến lược và mở rộng kinh doanh. Thành lập liên doanh. Chiến lược mở rộng kinh doanh. Hỗ trợ đầu tư."
     },
     {
       icon: Building2,
       title: "Đầu tư & Dự án",
-      desc: "Tư vấn đầu tư và phát triển các dự án bền vững."
+      desc: "Tư vấn đầu tư trực tiếp từ nước ngoài. Nghiên cứu tính khả thi của dự án. Phân tích cơ hội đầu tư. Phối hợp thẩm định. Đại diện cho nhà đầu tư."
     },
     {
       icon: Landmark,
-      title: "Quan hệ Chính phủ",
-      desc: "Kết nối doanh nghiệp với các cơ quan quản lý."
+      title: "Quan hệ Chính phủ & Thể chế",
+      desc: "Phối hợp với các bộ ngành chính phủ và chính quyền. Hỗ trợ thủ tục đầu tư. Trình bày dự án và hợp tác với các bên liên quan. Các sáng kiến hợp tác quốc tế."
     },
     {
       icon: Globe,
       title: "Thương mại Quốc tế",
-      desc: "Xuất nhập khẩu và phát triển chuỗi cung ứng."
+      desc: "Tư vấn xuất nhập khẩu. Tìm nguồn cung ứng quốc tế. Phát triển chuỗi cung ứng. Hướng dẫn tuân thủ và đàm phán thương mại."
     }
   ];
 
@@ -36,7 +36,7 @@ export default function About() {
 
         <h2 className="text-center text-4xl font-bold text-blue-900">
 
-          NHỮNG GÌ CHÚNG TÔI LÀM
+          DỊCH VỤ CỦA CHÚNG TÔI
 
         </h2>
 

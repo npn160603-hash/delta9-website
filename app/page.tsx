@@ -1,3 +1,5 @@
+import Footer from "./components/Footer/Footer";
+import News from "./components/New/New";
 import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
@@ -12,6 +14,8 @@ export default function Home() {
       <About />
       <Projects />
       <WhyChooseUs />
+      <News />
+      <Footer />
     </main>
   );
 }

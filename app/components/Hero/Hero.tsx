@@ -14,31 +14,31 @@ export default function Hero() {
 
       <div className="relative z-10 flex h-full items-center">
 
-        <div className="mx-auto w-full max-w-7xl px-8">
+        <div className="w-full px-32">
 
           <h1 className="text-6xl font-bold text-white leading-tight">
 
-            Connecting
+            KẾT NỐI TOÀN CẦU
 
             <br />
 
-            Investment
+            CƠ HỘI VỚI
 
             <br />
 
-            Opportunities
+            VIỆT NAM & ĐÔNG NAM Á
 
           </h1>
 
           <p className="mt-6 text-xl text-white">
 
-            Finance • Investment • Consulting
+            Tư Vấn Kinh Doanh Quốc Tế • Tư Vấn Đầu Tư • Phát Triển Dự Án • Quan Hệ Chính Phủ
 
           </p>
 
           <button className="mt-8 rounded bg-yellow-500 px-8 py-4 text-white">
 
-            CONTACT US
+            LIÊN HỆ
 
           </button>
 
