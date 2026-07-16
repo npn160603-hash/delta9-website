@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative h-screen">
@@ -36,11 +37,12 @@ export default function Hero() {
 
           </p>
 
-          <button className="mt-8 rounded bg-yellow-500 px-8 py-4 text-white">
-
-            LIÊN HỆ
-
-          </button>
+          <Link
+  href="/contact"
+  className="mt-8 inline-flex w-fit items-center justify-center rounded bg-yellow-500 px-8 py-4 font-semibold text-slate-950 transition hover:bg-yellow-400"
+>
+  LIÊN HỆ
+</Link>
 
         </div>
 

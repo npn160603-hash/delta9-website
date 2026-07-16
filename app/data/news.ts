@@ -1,29 +1,26 @@
-export const news = [
+export const newsItems = [
   {
     id: 1,
-    title: "Delta9 tăng cường hợp tác đầu tư",
-    description:
-      "Ký kết hợp tác với nhiều đối tác quốc tế nhằm mở rộng cơ hội đầu tư.",
+    title: "Delta 9 Global tăng cường hợp tác quốc tế",
     date: "20/07/2026",
-    image: "/images/news/news1.jpg",
-    link: "https://thanhnien.vn/..."
+    description:
+      "Mở rộng quan hệ với các đối tác nhằm phát triển những cơ hội đầu tư mới.",
+    link: "",
   },
   {
     id: 2,
-    title: "Dự án năng lượng mới",
+    title: "Cơ hội phát triển năng lượng tái tạo",
+    date: "15/07/2026",
     description:
-      "Đầu tư phát triển năng lượng tái tạo tại Đông Nam Á.",
-    date: "18/07/2026",
-    image: "/images/news/news2.jpg",
-    link: "https://vietnamnet.vn/..."
+      "Năng lượng sạch tiếp tục là một trong những lĩnh vực có tiềm năng phát triển.",
+    link: "",
   },
   {
     id: 3,
-    title: "Mở rộng hợp tác quốc tế",
+    title: "Phát triển chuỗi cung ứng nông nghiệp",
+    date: "10/07/2026",
     description:
-      "Delta9 ký kết với nhiều doanh nghiệp quốc tế.",
-    date: "15/07/2026",
-    image: "/images/news/news3.jpg",
-    link: "https://cafef.vn/..."
-  }
+      "Kết nối sản xuất, chế biến và phân phối nhằm gia tăng giá trị sản phẩm.",
+    link: "",
+  },
 ];

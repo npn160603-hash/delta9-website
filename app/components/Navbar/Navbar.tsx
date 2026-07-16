@@ -1,42 +1,54 @@
+import Link from "next/link";
+
+const menuItems = [
+  {
+    title: "Trang chủ",
+    href: "/",
+  },
+  {
+    title: "Giới thiệu",
+    href: "/about",
+  },
+  {
+    title: "Dịch vụ",
+    href: "/services",
+  },
+  {
+    title: "Dự án",
+    href: "/projects",
+  },
+  {
+    title: "Tin tức",
+    href: "/news",
+  },
+  {
+    title: "Liên hệ",
+    href: "/contact",
+  },
+];
+
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-[#0B2D5C]">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-6">
-
-        <h1 className="text-2xl font-bold text-white">
+    <header className="sticky top-0 z-50 w-full bg-slate-950 text-white shadow-lg">
+      <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-8 px-6">
+        <Link href="/" className="text-2xl font-bold">
           DELTA9
-        </h1>
+        </Link>
 
         <nav>
-          <ul className="flex gap-8 text-white">
-
-            <li>
-              <a href="#">Trang chủ</a>
-            </li>
-
-            <li>
-              <a href="#">Giới thiệu</a>
-            </li>
-
-            <li>
-              <a href="#">Dịch vụ</a>
-            </li>
-
-            <li>
-              <a href="#">Dự án</a>
-            </li>
-
-            <li>
-              <a href="#">Tin tức</a>
-            </li>
-
-            <li>
-              <a href="#">Liên hệ</a>
-            </li>
-
+          <ul className="flex flex-wrap items-center justify-end gap-x-7 gap-y-2">
+            {menuItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="text-sm font-medium transition hover:text-yellow-400"
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
-
       </div>
     </header>
   );
