@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "projects": "Dự án",
+    "news": "Tin tức",
+    "contact": "Liên hệ",
+    "partners": "Đối tác"
+  },
+  "hero": {
+    "title": [
+      "KẾT NỐI TOÀN CẦU",
+      "CƠ HỘI VỚI",
+      "VIỆT NAM & ĐÔNG NAM Á"
+    ],
+    "subtitle": "Tư Vấn Kinh Doanh Quốc Tế • Tư Vấn Đầu Tư • Phát Triển Dự Án • Quan Hệ Chính Phủ",
+    "contactButton": "LIÊN HỆ"
+  },
+  "homeAbout": {
+    "smallTitle": "VỀ CHÚNG TÔI",
+    "title": "Kết nối cơ hội, kiến tạo giá trị bền vững",
+    "description": "Delta 9 hỗ trợ doanh nghiệp và nhà đầu tư trong lĩnh vực tư vấn kinh doanh quốc tế, đầu tư và phát triển dự án.",
+    "button": "TÌM HIỂU VỀ CHÚNG TÔI"
+  }
+}

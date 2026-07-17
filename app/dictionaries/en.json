@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "projects": "Projects",
+    "news": "News",
+    "contact": "Contact",
+    "partners": "Partners"
+  },
+  "hero": {
+    "title": [
+      "GLOBAL CONNECTIONS",
+      "OPPORTUNITIES IN",
+      "VIETNAM & SOUTHEAST ASIA"
+    ],
+    "subtitle": "International Business Consulting • Investment Consulting • Project Development • Government Relations",
+    "contactButton": "CONTACT US"
+  },
+  "homeAbout": {
+    "smallTitle": "ABOUT US",
+    "title": "Connecting opportunities, creating sustainable value",
+    "description": "Delta 9 supports businesses and investors in international business consulting, investment and project development.",
+    "button": "LEARN MORE ABOUT US"
+  }
+}

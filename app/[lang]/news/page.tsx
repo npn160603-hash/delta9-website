@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { newsItems } from "../data/news";
+import { newsItems } from "../../data/news";
 
 export const metadata: Metadata = {
   title: "Tin tức",
