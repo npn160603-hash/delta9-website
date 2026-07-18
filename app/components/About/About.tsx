@@ -84,39 +84,43 @@ export default function About({
         };
 
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 md:px-8">
+    <section className="bg-[#17191a] px-4 py-16 text-white sm:px-6 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl">
         {/* Tiêu đề */}
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-blue-900 md:text-4xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-bold text-[#78aef8] sm:text-4xl">
             {content.title}
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl leading-8 text-gray-600">
+          <p className="mx-auto mt-5 text-sm leading-7 text-gray-300 sm:mt-6 sm:text-base sm:leading-8">
             {content.description}
           </p>
         </div>
 
         {/* Danh sách dịch vụ */}
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-16 md:grid-cols-2 lg:grid-cols-4">
           {content.services.map((service) => {
             const Icon = service.icon;
 
             return (
               <article
                 key={service.title}
-                className="rounded-xl border border-gray-100 bg-white p-6 text-center transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+                className="group flex flex-col rounded-2xl border border-white/20 bg-white/[0.02] p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-yellow-500/60 hover:bg-white/[0.05] hover:shadow-2xl sm:p-7"
               >
-                <Icon
-                  size={60}
-                  className="mx-auto text-blue-900"
-                />
+                {/* Vòng tròn màu vàng bao quanh icon */}
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border-2 border-yellow-500 bg-yellow-500/5 text-yellow-400 shadow-[0_0_0_7px_rgba(234,179,8,0.08)] transition duration-300 group-hover:bg-yellow-500 group-hover:text-slate-950 group-hover:shadow-[0_0_0_10px_rgba(234,179,8,0.12)] sm:h-24 sm:w-24">
+                  <Icon
+                    size={42}
+                    strokeWidth={1.8}
+                    className="transition duration-300 sm:h-12 sm:w-12"
+                  />
+                </div>
 
-                <h3 className="mt-6 text-xl font-bold text-slate-900">
+                <h3 className="mt-8 text-xl font-bold leading-7 text-white">
                   {service.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-gray-500">
+                <p className="mt-4 text-sm leading-7 text-gray-400 sm:text-base">
                   {service.description}
                 </p>
               </article>

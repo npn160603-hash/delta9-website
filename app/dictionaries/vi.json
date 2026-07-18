@@ -10,11 +10,13 @@
   },
   "hero": {
     "title": [
-      "KẾT NỐI TOÀN CẦU",
+      "KẾT NỐI",
+      "TOÀN CẦU",
       "CƠ HỘI VỚI",
-      "VIỆT NAM & ĐÔNG NAM Á"
+      "VIỆT NAM & ",
+      "ĐÔNG NAM Á"
     ],
-    "subtitle": "Tư Vấn Kinh Doanh Quốc Tế • Tư Vấn Đầu Tư • Phát Triển Dự Án • Quan Hệ Chính Phủ",
+    "subtitle": "Tư Vấn Kinh Doanh Quốc Tế • Tư Vấn Đầu Tư\nPhát Triển Dự Án • Quan Hệ Chính Phủ",
     "contactButton": "LIÊN HỆ"
   },
   "homeAbout": {

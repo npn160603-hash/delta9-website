@@ -8,6 +8,13 @@ export type LocalizedPartnerText = {
 export type Partner = {
   slug: string;
   company: string;
+
+  /*
+    Đường dẫn logo trong thư mục public.
+    Dấu ? nghĩa là logo không bắt buộc.
+  */
+  logo?: string;
+
   representative?: string;
   role?: LocalizedPartnerText;
   email?: string;
@@ -22,6 +29,8 @@ export const partners: Partner[] = [
     slug: "apec-group",
 
     company: "APEC GROUP",
+
+    logo: "/images/partners/apec-group.png",
 
     representative: "Colin Archer",
 
@@ -44,6 +53,8 @@ export const partners: Partner[] = [
     slug: "witucki-capital-holdings",
 
     company: "Witucki Capital Holdings, LLC",
+
+    logo: "/images/partners/witucki-capital.png",
 
     representative: "Timothy Witucki",
 
@@ -71,6 +82,8 @@ export const partners: Partner[] = [
 
     company: "AuCopia International Asia",
 
+    logo: "/images/partners/aucopia.png",
+
     representative: "Frank Podesta",
 
     role: {
@@ -96,6 +109,8 @@ export const partners: Partner[] = [
 
     company: "Lebon Realty Inc.",
 
+    logo: "/images/partners/lebon-realty.png",
+
     website: "https://www.lebonrealtors.com/",
 
     description: {
@@ -107,8 +122,8 @@ export const partners: Partner[] = [
   },
 
   /*
-    Chưa công khai vì chưa có đủ thông tin về
-    công ty, chức danh và cách viết chính xác của tên.
+    Đối tác này chưa công khai vì chưa có đủ thông tin.
+    published: false nên sẽ không xuất hiện trên website.
   */
   {
     slug: "alex-junita",
@@ -128,6 +143,9 @@ export const partners: Partner[] = [
   },
 ];
 
+/*
+  Chỉ lấy các đối tác được phép công khai.
+*/
 export const publicPartners = partners.filter(
   (partner) => partner.published,
 );

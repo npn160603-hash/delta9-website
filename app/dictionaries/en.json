@@ -10,11 +10,13 @@
   },
   "hero": {
     "title": [
-      "GLOBAL CONNECTIONS",
-      "OPPORTUNITIES IN",
-      "VIETNAM & SOUTHEAST ASIA"
+      "GLOBAL",
+      "CONNECTIONS",
+      "OPPORTUNITIES",
+      "IN VIETNAM & ",
+      "SOUTHEAST ASIA"
     ],
-    "subtitle": "International Business Consulting • Investment Consulting • Project Development • Government Relations",
+    "subtitle": "International Business Consulting • Investment Consulting\nProject Development • Government Relations",
     "contactButton": "CONTACT US"
   },
   "homeAbout": {

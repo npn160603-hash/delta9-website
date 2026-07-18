@@ -1,4 +1,5 @@
 import type { Route } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 type Language = "vi" | "en";
@@ -18,37 +19,54 @@ export default function Hero({
   lang,
   content,
 }: HeroProps) {
+  const imageAlt = content.title.join(" ");
+
   return (
-    <section className="relative min-h-screen">
+    <section className="relative isolate min-h-[calc(100svh-76px)] overflow-hidden bg-slate-950 text-white lg:min-h-[calc(100vh-80px)]">
       {/* Ảnh nền */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images 1/hero.jpg')",
-        }}
+      <Image
+        src="/images 1/hero.jpg"
+        alt={imageAlt}
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-[65%_center] sm:object-center"
       />
 
       {/* Lớp phủ tối */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/45" />
+
+      {/* Lớp gradient giúp chữ dễ đọc */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/65 to-slate-950/15 sm:from-slate-950/85 sm:via-slate-950/50 sm:to-transparent" />
 
       {/* Nội dung */}
-      <div className="relative z-10 flex min-h-screen items-center">
-        <div className="w-full px-6 md:px-12 lg:px-32">
-          <h1 className="text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-            {content.title.map((line) => (
-              <span key={line} className="block">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-76px)] max-w-7xl items-end px-4 pb-14 pt-24 sm:items-center sm:px-6 sm:py-20 lg:min-h-[calc(100vh-80px)] lg:px-8">
+        <div className="w-full max-w-5xl">
+          <h1 className="break-words text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            {content.title.map((line, index) => (
+              <span
+                key={`${line}-${index}`}
+                className="block"
+              >
                 {line}
               </span>
             ))}
           </h1>
 
-          <p className="mt-6 max-w-5xl text-base leading-8 text-white md:text-xl">
-            {content.subtitle}
-          </p>
+          <div className="mt-5 max-w-full text-sm font-medium leading-7 text-slate-200 sm:mt-6 sm:text-base sm:leading-8 md:text-lg lg:text-xl">
+  {content.subtitle.split("\n").map((line, index) => (
+    <span
+      key={`${line}-${index}`}
+      className="block break-words lg:whitespace-nowrap"
+    >
+      {line}
+    </span>
+  ))}
+</div>
 
           <Link
             href={`/${lang}/contact` as Route}
-            className="mt-8 inline-flex w-fit items-center justify-center rounded bg-yellow-500 px-8 py-4 font-semibold text-slate-950 transition hover:bg-yellow-400"
+            className="mt-7 inline-flex w-full items-center justify-center rounded-lg bg-yellow-500 px-6 py-4 text-sm font-bold text-slate-950 shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-yellow-400 sm:mt-8 sm:w-auto sm:px-8 sm:text-base"
           >
             {content.contactButton}
           </Link>

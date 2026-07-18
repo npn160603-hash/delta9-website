@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Building2,
   ExternalLink,
@@ -100,63 +101,80 @@ export default async function PartnersPage({
   const content = pageContent[lang];
 
   return (
-    <main className="bg-slate-100">
+    <main className="bg-[#17191a]">
       {/* Phần đầu trang */}
-      <section className="bg-slate-950 px-6 py-24 text-center text-white">
+      <section className="bg-slate-950 px-4 py-16 text-center text-white sm:px-6 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl">
-          <p className="font-semibold uppercase tracking-[0.25em] text-yellow-400">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-400 sm:tracking-[0.25em]">
             {content.hero.eyebrow}
           </p>
 
-          <h1 className="mt-4 text-4xl font-bold md:text-6xl">
+          <h1 className="mt-4 text-4xl font-bold sm:text-5xl md:text-6xl">
             {content.hero.title}
           </h1>
 
-          <p className="mt-6 text-lg leading-8 text-slate-300">
+          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-slate-300 sm:text-lg sm:leading-8">
             {content.hero.description}
           </p>
         </div>
       </section>
 
       {/* Danh sách đối tác */}
-      <section className="px-6 py-20">
+      <section className="px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {publicPartners.map((partner) => (
               <article
                 key={partner.slug}
-                className="rounded-2xl bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-white transition duration-300 hover:-translate-y-1 hover:border-yellow-500/40 hover:bg-white/[0.05] hover:shadow-xl sm:p-7"
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-yellow-500 text-slate-950">
-                    <Building2 size={28} />
+                {/* Logo, tên công ty và mô tả */}
+                <div className="flex items-start gap-4 sm:gap-5">
+                  {/* Logo đối tác */}
+                  <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white p-1.5 shadow-sm sm:h-20 sm:w-20">
+                    {partner.logo ? (
+                      <Image
+                        src={partner.logo}
+                        alt={`${partner.company} logo`}
+                        fill
+                        sizes="80px"
+                        className="object-contain p-2"
+                      />
+                    ) : (
+                      <Building2
+                        size={30}
+                        className="text-yellow-500"
+                      />
+                    )}
                   </div>
 
-                  <div>
-                    <h2 className="text-2xl font-bold text-slate-900">
+                  {/* Tên và mô tả */}
+                  <div className="min-w-0 flex-1">
+                    <h2 className="break-words text-xl font-bold leading-7 text-white sm:text-2xl">
                       {partner.company}
                     </h2>
 
-                    <p className="mt-3 leading-7 text-slate-600">
+                    <p className="mt-3 text-sm leading-7 text-slate-400 sm:text-base">
                       {partner.description[lang]}
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-7 space-y-4 border-t border-slate-200 pt-6">
+                {/* Thông tin chi tiết */}
+                <div className="mt-7 space-y-5 border-t border-white/15 pt-6">
                   {partner.representative && (
                     <div className="flex items-start gap-3">
                       <UserRound
                         size={20}
-                        className="mt-1 shrink-0 text-yellow-700"
+                        className="mt-1 shrink-0 text-yellow-400"
                       />
 
-                      <div>
+                      <div className="min-w-0">
                         <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
                           {content.labels.representative}
                         </p>
 
-                        <p className="mt-1 font-semibold text-slate-900">
+                        <p className="mt-1 break-words font-semibold text-white">
                           {partner.representative}
                         </p>
                       </div>
@@ -169,7 +187,7 @@ export default async function PartnersPage({
                         {content.labels.role}
                       </p>
 
-                      <p className="mt-1 text-slate-700">
+                      <p className="mt-1 text-slate-300">
                         {partner.role[lang]}
                       </p>
                     </div>
@@ -179,7 +197,7 @@ export default async function PartnersPage({
                     <div className="flex items-start gap-3">
                       <Mail
                         size={20}
-                        className="mt-1 shrink-0 text-yellow-700"
+                        className="mt-1 shrink-0 text-yellow-400"
                       />
 
                       <div className="min-w-0">
@@ -189,7 +207,7 @@ export default async function PartnersPage({
 
                         <a
                           href={`mailto:${partner.email}`}
-                          className="mt-1 block break-words text-slate-700 transition hover:text-yellow-700"
+                          className="mt-1 block break-all text-slate-300 transition hover:text-yellow-400"
                         >
                           {partner.email}
                         </a>
@@ -201,7 +219,7 @@ export default async function PartnersPage({
                     <div className="flex items-start gap-3">
                       <Phone
                         size={20}
-                        className="mt-1 shrink-0 text-yellow-700"
+                        className="mt-1 shrink-0 text-yellow-400"
                       />
 
                       <div>
@@ -214,7 +232,7 @@ export default async function PartnersPage({
                             /[^\d+]/g,
                             "",
                           )}`}
-                          className="mt-1 block text-slate-700 transition hover:text-yellow-700"
+                          className="mt-1 block text-slate-300 transition hover:text-yellow-400"
                         >
                           {partner.phone}
                         </a>
@@ -223,16 +241,20 @@ export default async function PartnersPage({
                   )}
                 </div>
 
+                {/* Website */}
                 {partner.website && (
                   <a
                     href={partner.website}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-7 inline-flex items-center gap-2 rounded-lg bg-slate-900 px-6 py-3 font-bold text-white transition hover:bg-yellow-500 hover:text-slate-950"
+                    className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-yellow-500 px-5 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-yellow-400 sm:w-auto sm:px-6"
                   >
                     {content.labels.website}
 
-                    <ExternalLink size={18} />
+                    <ExternalLink
+                      size={18}
+                      className="shrink-0"
+                    />
                   </a>
                 )}
               </article>
