@@ -135,7 +135,7 @@ export default function Navbar({
 
             <div className="relative h-full w-full">
               <Image
-                src="/images/delta9-logo.png"
+                src="/images/delta9-logo-v2.png"
                 alt="The Delta9 Global Corporation logo"
                 fill
                 priority
