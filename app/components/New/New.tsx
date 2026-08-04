@@ -127,34 +127,44 @@ export default function News({
         };
 
   return (
-    <section className="bg-white py-20">
-      <div className="mx-auto max-w-7xl px-6 md:px-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+    <section
+      className="w-full px-4 py-16 text-white sm:px-6 sm:py-20 lg:py-24"
+      style={{
+        backgroundColor: "#17191a",
+      }}
+    >
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
           {/* Khung tin tức */}
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm md:p-8 lg:col-span-2">
+          <div
+            className="overflow-hidden rounded-2xl border border-white/15 p-5 shadow-xl sm:p-7 md:p-8 lg:col-span-2"
+            style={{
+              backgroundColor: "#1b1d1e",
+            }}
+          >
             {/* Tiêu đề */}
-            <div className="flex flex-col gap-4 border-b border-gray-200 pb-5 sm:flex-row sm:items-center sm:justify-between">
-              <h2 className="text-xl font-bold uppercase text-blue-900 md:text-2xl">
+            <div className="flex flex-col gap-4 border-b border-white/15 pb-5 sm:flex-row sm:items-center sm:justify-between">
+              <h2 className="text-xl font-bold uppercase leading-7 text-[#78aef8] sm:text-2xl">
                 {content.newsTitle}
               </h2>
 
               <Link
                 href={`/${lang}/news` as Route}
-                className="w-fit shrink-0 text-xs font-bold uppercase tracking-wide text-blue-900 transition hover:text-yellow-600"
+                className="w-fit shrink-0 text-xs font-bold uppercase tracking-wide text-yellow-400 transition hover:text-yellow-300"
               >
                 {content.newsButton}
               </Link>
             </div>
 
             {/* Danh sách bài viết */}
-            <div className="divide-y divide-gray-200">
+            <div className="divide-y divide-white/10">
               {content.newsItems.map((item) => (
                 <article
                   key={item.title}
-                  className="grid gap-5 py-6 sm:grid-cols-[180px_1fr]"
+                  className="grid grid-cols-1 gap-5 py-6 sm:grid-cols-[180px_1fr] sm:items-start"
                 >
                   {/* Ảnh tin tức */}
-                  <div className="relative h-44 overflow-hidden rounded-lg sm:h-28">
+                  <div className="relative aspect-[16/9] overflow-hidden rounded-xl sm:h-28 sm:aspect-auto">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -165,16 +175,16 @@ export default function News({
                   </div>
 
                   {/* Nội dung */}
-                  <div>
-                    <h3 className="text-lg font-bold leading-6 text-blue-900 transition hover:text-yellow-700">
+                  <div className="min-w-0">
+                    <h3 className="break-words text-lg font-bold leading-7 text-white transition hover:text-yellow-400">
                       {item.title}
                     </h3>
 
-                    <p className="mt-2 line-clamp-2 text-sm leading-6 text-gray-600">
+                    <p className="mt-2 text-sm leading-6 text-slate-400">
                       {item.description}
                     </p>
 
-                    <p className="mt-2 text-xs font-medium text-gray-500">
+                    <p className="mt-3 text-xs font-medium text-slate-500">
                       {item.date}
                     </p>
                   </div>
@@ -184,12 +194,12 @@ export default function News({
           </div>
 
           {/* Khung cơ hội đầu tư */}
-          <div className="rounded-xl bg-blue-950 p-7 text-white shadow-sm md:p-8">
-            <h2 className="text-2xl font-bold uppercase">
+          <div className="rounded-2xl border border-yellow-400/25 bg-[#1f2150] p-6 text-white shadow-xl sm:p-8">
+            <h2 className="text-2xl font-bold uppercase leading-8 text-yellow-400">
               {content.investmentTitle}
             </h2>
 
-            <p className="mt-5 leading-7 text-blue-100">
+            <p className="mt-5 text-sm leading-7 text-slate-300 sm:text-base">
               {content.investmentDescription}
             </p>
 
@@ -197,20 +207,20 @@ export default function News({
               {content.investmentItems.map((item) => (
                 <li
                   key={item}
-                  className="rounded-lg border border-white/10 bg-white/5 px-5 py-4 text-sm font-medium"
+                  className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-4 text-sm font-medium leading-6 text-slate-200 sm:px-5"
                 >
-                  <span className="mr-2 text-yellow-400">
+                  <span className="shrink-0 font-bold text-yellow-400">
                     ✓
                   </span>
 
-                  {item}
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
 
             <Link
               href={`/${lang}/contact` as Route}
-              className="mt-8 inline-block rounded-lg bg-yellow-500 px-6 py-4 text-sm font-bold text-slate-950 transition hover:bg-yellow-400"
+              className="mt-8 inline-flex w-full items-center justify-center rounded-lg bg-yellow-500 px-5 py-4 text-center text-sm font-bold text-slate-950 transition hover:-translate-y-1 hover:bg-yellow-400 sm:w-auto sm:px-6"
             >
               {content.investmentButton}
             </Link>
