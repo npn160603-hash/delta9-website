@@ -49,7 +49,7 @@ export default function WhyChooseUs({
           ],
         }
       : {
-          title: "TẠI SAO CHỌN CHÚNG TÔI 123",
+          title: "TẠI SAO CHỌN CHÚNG TÔI",
           description:
             "Cam kết mang đến những giải pháp đầu tư và tư vấn hiệu quả.",
 
