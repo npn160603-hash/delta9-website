@@ -92,7 +92,7 @@ export default function News({
               image: "/images/news/bat-tay.jpg",
 
               title:
-                "Tập đoàn Delta9 Global tăng cường quan hệ hợp tác tại Việt Nam",
+                "Tập đoàn Delta 9 Global tăng cường quan hệ hợp tác tại Việt Nam",
 
               description:
                 "Thúc đẩy hợp tác với các nhà lãnh đạo Chính phủ và doanh nghiệp tư nhân nhằm hỗ trợ đầu tư và phát triển bền vững.",
