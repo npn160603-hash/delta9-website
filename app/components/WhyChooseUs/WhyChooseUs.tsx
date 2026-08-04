@@ -82,7 +82,12 @@ export default function WhyChooseUs({
         };
 
   return (
-    <section className="bg-[#17191a] px-4 py-16 text-white sm:px-6 sm:py-20 lg:py-24">
+    <section
+      className="w-full px-4 py-16 text-white sm:px-6 sm:py-20 lg:py-24"
+      style={{
+        backgroundColor: "#17191a",
+      }}
+    >
       <div className="mx-auto max-w-7xl">
         {/* Tiêu đề */}
         <div className="mx-auto max-w-3xl text-center">
@@ -103,7 +108,10 @@ export default function WhyChooseUs({
             return (
               <article
                 key={item.title}
-                className="group flex min-h-[250px] flex-col items-center rounded-2xl border border-white/20 bg-white/[0.02] p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-yellow-400/60 hover:bg-white/[0.05] hover:shadow-2xl sm:min-h-[270px] sm:p-8"
+                className="group flex min-h-[250px] flex-col items-center rounded-2xl border border-white/20 p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-yellow-400/60 hover:shadow-2xl sm:min-h-[270px] sm:p-8"
+                style={{
+                  backgroundColor: "#1b1d1e",
+                }}
               >
                 {/* Icon */}
                 <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-yellow-500 bg-yellow-500/5 text-yellow-400 shadow-[0_0_0_6px_rgba(234,179,8,0.07)] transition duration-300 group-hover:bg-yellow-500 group-hover:text-slate-950 group-hover:shadow-[0_0_0_9px_rgba(234,179,8,0.12)]">
