@@ -82,39 +82,44 @@ export default function WhyChooseUs({
         };
 
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="bg-[#17191a] px-4 py-16 text-white sm:px-6 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl">
         {/* Tiêu đề */}
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-blue-900 md:text-4xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-bold leading-tight text-[#78aef8] sm:text-4xl">
             {content.title}
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl leading-7 text-gray-500">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
             {content.description}
           </p>
         </div>
 
         {/* Danh sách giá trị nổi bật */}
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-14 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
           {content.features.map((item) => {
             const Icon = item.icon;
 
             return (
               <article
                 key={item.title}
-                className="rounded-xl border border-gray-200 bg-white p-8 text-center shadow transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+                className="group flex min-h-[250px] flex-col items-center rounded-2xl border border-white/20 bg-white/[0.02] p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-yellow-400/60 hover:bg-white/[0.05] hover:shadow-2xl sm:min-h-[270px] sm:p-8"
               >
-                <Icon
-                  size={55}
-                  className="mx-auto text-yellow-500"
-                />
+                {/* Icon */}
+                <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-yellow-500 bg-yellow-500/5 text-yellow-400 shadow-[0_0_0_6px_rgba(234,179,8,0.07)] transition duration-300 group-hover:bg-yellow-500 group-hover:text-slate-950 group-hover:shadow-[0_0_0_9px_rgba(234,179,8,0.12)]">
+                  <Icon
+                    size={42}
+                    strokeWidth={1.8}
+                  />
+                </div>
 
-                <h3 className="mt-6 text-xl font-semibold text-slate-900">
+                {/* Tiêu đề thẻ */}
+                <h3 className="mt-7 text-lg font-bold leading-7 text-white sm:text-xl">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-gray-500">
+                {/* Mô tả */}
+                <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
                   {item.description}
                 </p>
               </article>
