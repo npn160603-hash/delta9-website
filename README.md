@@ -34,3 +34,25 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Contact form email setup
+
+The contact form sends email through [Resend](https://resend.com) from the
+server-side route at `app/api/contact/route.ts`. Configure these environment
+variables in Vercel under **Project Settings > Environment Variables**:
+
+```text
+RESEND_API_KEY=re_...
+CONTACT_TO_EMAIL=your-gmail-address@gmail.com
+CONTACT_FROM_EMAIL=Delta9 Website <website@send.your-domain.com>
+```
+
+`RESEND_API_KEY` and `CONTACT_TO_EMAIL` are required.
+`CONTACT_FROM_EMAIL` is optional while testing and defaults to
+`Delta9 Website <onboarding@resend.dev>`. The default Resend test sender can
+only deliver to the email address associated with the Resend account.
+
+For production delivery, verify a sending domain or subdomain in Resend, add
+the DNS records Resend provides, and set `CONTACT_FROM_EMAIL` to an address on
+that verified domain. Environment variables must never use the `NEXT_PUBLIC_`
+prefix because they contain server-only configuration.

@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { hasLocale } from "../../dictionaries";
+import ContactForm from "./ContactForm";
 
 type ContactPageProps = {
   params: Promise<{
@@ -45,8 +46,13 @@ const pageContent = {
       messageLabel: "Nội dung",
       messagePlaceholder: "Nhập nội dung cần trao đổi",
       submitButton: "Gửi liên hệ",
+      sendingButton: "Đang gửi...",
+      successMessage:
+        "Yêu cầu đã được gửi thành công. Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.",
+      errorMessage:
+        "Chưa thể gửi yêu cầu. Vui lòng thử lại sau hoặc liên hệ trực tiếp qua email.",
       notice:
-        "Biểu mẫu hiện mới là giao diện và chưa gửi dữ liệu. Cần kết nối dịch vụ email hoặc hệ thống xử lý biểu mẫu để hoạt động.",
+        "Thông tin của bạn chỉ được sử dụng để phản hồi yêu cầu liên hệ này.",
     },
   },
 
@@ -84,8 +90,13 @@ const pageContent = {
       messageLabel: "Message",
       messagePlaceholder: "Enter the details you would like to discuss",
       submitButton: "Send Message",
+      sendingButton: "Sending...",
+      successMessage:
+        "Your request has been sent successfully. We will contact you as soon as possible.",
+      errorMessage:
+        "We could not send your request. Please try again later or contact us directly by email.",
       notice:
-        "This form is currently a user interface only and does not submit data. It must be connected to an email service or form-processing system to function.",
+        "Your information will only be used to respond to this contact request.",
     },
   },
 } as const;
@@ -206,71 +217,7 @@ export default async function ContactPage({
               {content.form.title}
             </h2>
 
-            <form className="mt-8 space-y-5">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="mb-2 block text-sm"
-                >
-                  {content.form.nameLabel}
-                </label>
-
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  autoComplete="name"
-                  placeholder={content.form.namePlaceholder}
-                  className="w-full rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-yellow-400"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="mb-2 block text-sm"
-                >
-                  {content.form.emailLabel}
-                </label>
-
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  placeholder={content.form.emailPlaceholder}
-                  className="w-full rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-yellow-400"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="mb-2 block text-sm"
-                >
-                  {content.form.messageLabel}
-                </label>
-
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={6}
-                  placeholder={content.form.messagePlaceholder}
-                  className="w-full resize-none rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-yellow-400"
-                />
-              </div>
-
-              <button
-                type="button"
-                className="w-full rounded-lg bg-yellow-500 px-6 py-4 font-bold text-slate-950 transition hover:bg-yellow-400"
-              >
-                {content.form.submitButton}
-              </button>
-
-              <p className="text-sm leading-6 text-slate-400">
-                {content.form.notice}
-              </p>
-            </form>
+            <ContactForm content={content.form} lang={lang} />
           </div>
         </div>
       </section>
