@@ -1,7 +1,7 @@
 # 00 — Tổng quan dự án
 
 > Cập nhật: 2026-08-10  
-> Source of truth đã đối chiếu: nhánh `main`, commit `9cfe5db4239f2d61474a07ec9afbdf3c36209720`  
+> Source of truth đã đối chiếu: nhánh `main` ngày 2026-08-10  
 > Repository: <https://github.com/thedelta9global-prog/delta9-website>
 
 ## 1. Dự án dùng để làm gì
@@ -130,7 +130,7 @@ npm run lint
 Trạng thái ngày 2026-08-10:
 
 - `npm run build`: **PASS**.
-- `npm run lint`: **FAIL**, còn một lỗi đã biết tại `app/components/Navbar/Navbar.tsx`; xem `04_BUGS_AND_FIXES.md`.
+- `npm run lint`: **PASS** sau khi sửa cách quản lý trạng thái menu mobile trong `app/components/Navbar/Navbar.tsx`.
 
 ## 7. Các route chính
 
@@ -147,4 +147,3 @@ Trạng thái ngày 2026-08-10:
 | `/[lang]/news` | Tin tức tĩnh; hiện chưa địa phương hóa đầy đủ |
 | `/[lang]/contact` | Thông tin và biểu mẫu liên hệ |
 | `/api/contact` | POST API gửi biểu mẫu qua Resend |
-

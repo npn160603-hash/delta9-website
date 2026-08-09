@@ -4,7 +4,7 @@ import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 type Language = "vi" | "en";
@@ -30,8 +30,11 @@ export default function Navbar({
 }: NavbarProps) {
   const pathname = usePathname();
 
-  const [mobileMenuOpen, setMobileMenuOpen] =
-    useState(false);
+  const [openMobileMenuPath, setOpenMobileMenuPath] =
+    useState<string | null>(null);
+
+  const mobileMenuOpen =
+    openMobileMenuPath === pathname;
 
   const menuItems: {
     label: string;
@@ -66,13 +69,6 @@ export default function Navbar({
       href: `/${lang}/contact` as Route,
     },
   ];
-
-  /*
-    Tự đóng menu điện thoại khi chuyển trang.
-  */
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
 
   function createLanguagePath(
     newLanguage: Language,
@@ -125,7 +121,7 @@ export default function Navbar({
           className="group flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3"
           aria-label="The Delta9 Global Corporation"
           onClick={() =>
-            setMobileMenuOpen(false)
+            setOpenMobileMenuPath(null)
           }
         >
           {/* Khung logo nổi bật */}
@@ -221,7 +217,7 @@ export default function Navbar({
             <Link
               href={createLanguagePath("vi")}
               onClick={() =>
-                setMobileMenuOpen(false)
+                setOpenMobileMenuPath(null)
               }
               className={`rounded-md px-2.5 py-2 transition sm:px-3 ${
                 lang === "vi"
@@ -235,7 +231,7 @@ export default function Navbar({
             <Link
               href={createLanguagePath("en")}
               onClick={() =>
-                setMobileMenuOpen(false)
+                setOpenMobileMenuPath(null)
               }
               className={`rounded-md px-2.5 py-2 transition sm:px-3 ${
                 lang === "en"
@@ -251,8 +247,11 @@ export default function Navbar({
           <button
             type="button"
             onClick={() =>
-              setMobileMenuOpen(
-                (current) => !current,
+              setOpenMobileMenuPath(
+                (currentPath) =>
+                  currentPath === pathname
+                    ? null
+                    : pathname,
               )
             }
             className="flex h-11 w-11 items-center justify-center rounded-lg border border-yellow-400/40 bg-[#17191a] text-yellow-400 shadow-md transition hover:border-yellow-300 hover:bg-yellow-500 hover:text-slate-950"
@@ -299,7 +298,7 @@ export default function Navbar({
                   <Link
                     href={item.href}
                     onClick={() =>
-                      setMobileMenuOpen(false)
+                      setOpenMobileMenuPath(null)
                     }
                     className={`flex items-center justify-between rounded-lg px-4 py-3.5 text-sm font-semibold transition ${
                       active

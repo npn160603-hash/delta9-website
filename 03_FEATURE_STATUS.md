@@ -10,8 +10,8 @@
 | Route song ngữ VI/EN | DONE | `app/dictionaries.ts`, `app/[lang]/layout.tsx` | Chỉ chấp nhận `vi` và `en`; locale khác trả 404 |
 | Nội dung song ngữ toàn website | PARTIAL | `app/dictionaries/**`, các page/component | Phần lớn nội dung có VI/EN; trang `/en/news` vẫn hiển thị nội dung/metadata tiếng Việt |
 | Thuộc tính ngôn ngữ HTML | BROKEN | `app/layout.tsx` | `<html lang="vi">` hard-code, nên `/en` vẫn báo document language là tiếng Việt |
-| Navbar desktop/mobile | DONE | `app/components/Navbar/Navbar.tsx` | Điều hướng, active state và VI/EN hoạt động theo code; còn lỗi lint riêng |
-| ESLint toàn dự án | BROKEN | `app/components/Navbar/Navbar.tsx` | `react-hooks/set-state-in-effect` tại dòng gọi `setMobileMenuOpen(false)` |
+| Navbar desktop/mobile | DONE | `app/components/Navbar/Navbar.tsx` | Điều hướng, active state và VI/EN hoạt động; menu tự đóng khi pathname đổi mà không dùng effect cập nhật state |
+| ESLint toàn dự án | DONE | `app/components/Navbar/Navbar.tsx` | `npm run lint` pass sau khi thay state boolean bằng pathname của menu đang mở |
 | Responsive UI | PARTIAL | các component/page | Có breakpoint Tailwind rộng rãi; chưa có kết quả QA thiết bị/trình duyệt chính thức |
 | Trang Giới thiệu | DONE | `app/[lang]/about/page.tsx` | Song ngữ, metadata theo locale, CTA liên hệ |
 | Trang Dịch vụ | DONE | `app/[lang]/services/page.tsx` | 4 nhóm dịch vụ song ngữ, metadata và CTA |
@@ -50,4 +50,3 @@
 - `NOT STARTED`: chưa có triển khai; không đồng nghĩa là yêu cầu bắt buộc.
 - `BROKEN`: có lỗi xác định hoặc hành vi sai có thể tái hiện từ source/tooling.
 - `DEPRECATED`: code/dữ liệu cũ không còn được luồng hiện tại sử dụng.
-

@@ -1,6 +1,6 @@
 # 02 — Kiến trúc dự án
 
-> Cập nhật: 2026-08-10. Kiến trúc được mô tả từ source code trên nhánh `main` tại commit `9cfe5db4239f2d61474a07ec9afbdf3c36209720`.
+> Cập nhật: 2026-08-10. Kiến trúc được mô tả từ source code trên nhánh `main`.
 
 ## 1. Tổng quan kiến trúc
 
@@ -252,4 +252,3 @@ Không có API AI, model AI hoặc thư viện AI trong runtime của website. A
 - Secret chỉ tồn tại trong Vercel hoặc `.env.local` và không được đưa vào Git.
 - Các trang dùng `generateStaticParams` để tạo route tĩnh cho locale/project.
 - Root `<html lang>` hiện bị hard-code `vi`; đây là lỗi kiến trúc đối với `/en`, xem `04_BUGS_AND_FIXES.md`.
-

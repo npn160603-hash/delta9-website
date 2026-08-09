@@ -6,7 +6,7 @@
 
 - Không có feature code đang chỉnh dở trong commit production đã đối chiếu.
 - Build production pass.
-- Lint còn một lỗi xác định trong Navbar.
+- Lint toàn dự án pass sau khi sửa Navbar.
 - Form email đã có code và hai biến bắt buộc đã được thêm vào Vercel, nhưng chưa có bằng chứng end-to-end rằng Gmail production nhận được submission.
 - Domain đã từng đạt `Valid Configuration`; trạng thái SSL cuối cùng chưa được ghi nhận độc lập.
 - Tiếng Anh đã là route mặc định.
@@ -19,7 +19,6 @@
 | P0 | Kiểm thử biểu mẫu production end-to-end | Submit trên `/en/contact` và `/vi/contact`; Resend báo Delivered; Gmail nhận đủ name/email/message/locale | Không nhất thiết sửa code; kiểm tra Vercel env, Resend Events, Gmail |
 | P0 | Hoàn thiện sender domain nếu recipient khác email tài khoản Resend | Gửi được đến Gmail bất kỳ đã phê duyệt, không gặp 403 của `resend.dev` | Resend Domains, DNS iNET, biến `CONTACT_FROM_EMAIL` |
 | P0 | Xác nhận HTTPS/domain production | Apex redirect đúng, `www` có certificate hợp lệ và mở website | Vercel Domains, iNET DNS; không sửa source trừ khi phát hiện lỗi app |
-| P1 | Sửa lỗi lint Navbar | `npm run lint` pass và menu vẫn đóng đúng sau navigation | `app/components/Navbar/Navbar.tsx` |
 | P1 | Sửa document language theo locale | `/en` render `lang="en"`, `/vi` render `lang="vi"` | `app/layout.tsx`, có thể `app/[lang]/layout.tsx`; đọc docs Next.js 16 trước khi đổi kiến trúc layout |
 | P1 | Hoàn thiện News song ngữ | `/en/news` có metadata/content English, `/vi/news` Vietnamese | `app/data/news.ts`, `app/[lang]/news/page.tsx`; cần bản dịch/URL đã duyệt |
 | P1 | Đồng bộ metadata với English default | Root/home English metadata đúng, metadata locale nhất quán | `app/layout.tsx`, `app/[lang]/page.tsx`, News page |
@@ -50,20 +49,6 @@
    - thêm `CONTACT_FROM_EMAIL=Delta9 Website <website@verified-domain>`;
    - redeploy và thử lại.
 6. Không ghi API key hoặc Gmail thật vào tài liệu/commit.
-
-### P1 — Sửa Navbar lint
-
-1. Đọc tài liệu React/Next.js cục bộ liên quan Client Components/navigation.
-2. Viết test/checklist cho ba luồng: click menu, click VI/EN, browser Back/Forward.
-3. Loại bỏ `setState` đồng bộ trong effect hoặc thiết kế state gắn với route key.
-4. Chạy:
-
-```bash
-npm run lint
-npm run build
-```
-
-5. Kiểm tra desktop/mobile trước khi merge.
 
 ### P1 — News song ngữ
 
@@ -103,4 +88,3 @@ Sau đó đổi data model sang field localized và để page đọc `params.la
 8. Nếu thay đổi behavior, architecture, dependency, domain, email hoặc requirement, cập nhật tài liệu tương ứng.
 9. Xác nhận cách phát hành: direct `main` hiện là workflow quan sát được, nhưng PR policy tương lai là **UNKNOWN / NEED CONFIRMATION**.
 10. Sau deploy, kiểm tra domain production, không chỉ URL preview.
-
